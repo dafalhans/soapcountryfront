@@ -1,0 +1,25 @@
+<p-card>
+  <form [formGroup]="nationalitieForm">
+
+    <div class="p-fluid">
+      <label>Id</label>
+      <input pInputText [formControlName]="nationalitieFields.Id">
+    </div>
+
+    <div class="p-fluid">
+      <label>Name</label>
+      <input pInputText [formControlName]="nationalitieFields.Name">
+    </div>
+
+<!--    <div class="mt-3 flex justify-content-end">-->
+<!--      <p-button [disabled]="nationalitieForm.invalid"-->
+<!--                pRipple-->
+<!--                (click)="save()"-->
+<!--                type="submit">{{ this.config.data ? 'Update' : 'Save' }}-->
+<!--      </p-button>-->
+<!--    </div>-->
+
+
+  </form>
+</p-card>
+{{ nationalitieForm.value | json }}
