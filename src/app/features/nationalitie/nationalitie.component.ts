@@ -165,5 +165,9 @@ export class nationalitieComponent implements OnInit {
     console.log('from within the showCountryDetails');
   }
 
+  clicky(field: string):string {
+    console.log('clicky');
+    return 'clickystring';
+  }
 }
 

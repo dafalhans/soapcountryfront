@@ -20,15 +20,56 @@
 <!--    </div>-->
 <!--  </div>-->
 <!--</div>-->
+
+
+
+
+
+<!--<div class="country-container">-->
+<!--  <div class="flag-container" (mouseenter)="showOverlay = true" (mouseleave)="showOverlay = false">-->
+<!--&lt;!&ndash;    <img [src]="'data:image/jpg;base64,' + (current$ | async)?.flagB64">&ndash;&gt;-->
+<!--        <img [src]="'data:image/jpg;base64,' + current$.value?.flagB64">-->
+<!--    <div class="overlay" *ngIf="showOverlay">-->
+<!--      <h1>{{ current$.value?.capital }}</h1>-->
+<!--      <h2>{{ current$.value?.currency }}</h2>-->
+<!--      <h2>{{current$.value?.phonePrefix }}</h2>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<div class="country-container">-->
+<!--  <div class="flag-container" *ngIf="(current$ | async) as currentCountry" (mouseenter)="showOverlay = true" (mouseleave)="showOverlay = false">-->
+<!--    <img [src]="'data:image/jpg;base64,' + currentCountry.flagB64">-->
+<!--    <div class="overlay" *ngIf="showOverlay">-->
+<!--      <h1>{{ currentCountry.capital }}</h1>-->
+<!--      <h2>{{ currentCountry.currency }}</h2>-->
+<!--      <h2>{{ currentCountry.phonePrefix }}</h2>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<div class="country-container">-->
+<!--  <div class="flag-container" *ngIf="(currentCountry$) as currentCountry" (mouseenter)="showOverlay = true" (mouseleave)="showOverlay = false">-->
+<!--    <img [src]="'data:image/jpg;base64,' + currentCountry?.flagB64">-->
+<!--    <div class="overlay" *ngIf="showOverlay">-->
+<!--      <h1>{{ currentCountry?.capital }}</h1>-->
+<!--      <h2>{{ currentCountry?.currency }}</h2>-->
+<!--      <h2>{{ currentCountry?.phonePrefix }}</h2>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
 <div class="country-container">
+  <h1>{{ (showCountry?.phonePrefix) }}</h1>
+  <h1>{{ (showCountry?.currency) }}</h1>
+  <h1>{{ (showCountry?.capital) }}</h1>
+  <img [src]="'data:image/jpg;base64,' + showCountry?.flagB64">-->
   <div class="flag-container" (mouseenter)="showOverlay = true" (mouseleave)="showOverlay = false">
-<!--    <img [src]="'data:image/jpg;base64,' + (current$ | async)?.flagB64">-->
-        <img [src]="'data:image/jpg;base64,' + current$.value?.flagB64">
-    <div class="overlay" *ngIf="showOverlay">
-      <h1>{{ current$.value?.capital }}</h1>
-      <h2>{{ current$.value?.currency }}</h2>
-      <h2>{{current$.value?.phonePrefix }}</h2>
-    </div>
+    <div class="overlay" *ngIf="showOverlay">-->
+            <h1>{{ (showCountry?.phonePrefix) }}</h1>
+      <!--      <h2>{{ currentCountry?.currency }}</h2>-->
+      <!--      <h2>{{ currentCountry?.phonePrefix }}</h2>-->
+      <!--    </div>-->
   </div>
 </div>
 

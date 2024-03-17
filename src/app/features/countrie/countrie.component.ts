@@ -10,6 +10,7 @@ import {DialogService} from "primeng/dynamicdialog";
 import {ConfirmDialogModule} from "primeng/confirmdialog";
 import {ConfirmationService, MessageService} from "primeng/api";
 import {ToastModule} from "primeng/toast";
+import {Observable, Subscription} from "rxjs";
 
 interface Column {
   field: string,
@@ -51,6 +52,8 @@ export class countrieComponent implements OnInit {
 
   all$ = this.countrieManager.all$;
   current$ = this.countrieManager.current$;
+  currentCountry!: Subscription;
+  showCountry?: countrieModel;
 
   cols!: Column[];
 
@@ -59,6 +62,7 @@ export class countrieComponent implements OnInit {
   @Input() country!: string;
   showOverlay = false;
 
+
   constructor(private countrieManager: countrieManager,
               private confirmationService: ConfirmationService,
               private messageService: MessageService,
@@ -66,7 +70,7 @@ export class countrieComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.current$.value);
+    // console.log(this.current$.value);
   //   // console.log(this.country);
   //   this.countrieManager.getAll();
   //   // this.countrieManager.getById("BEL");
@@ -77,7 +81,14 @@ export class countrieComponent implements OnInit {
   //   // if (this.country && this.country.id) {
   //   //   console.log("text "+ this.country);
   //   // }
-    this.countrieManager.getById(this.country);
+  //   this.currentCountry$ = this.countrieManager.current$;
+
+    // this.countrieManager.getById(this.country);
+
+    this.countrieManager.getById2(this.country).subscribe((data) => console.log("from ngOnInit " + data.currency ));
+    this.countrieManager.getById2(this.country).subscribe((data) => {this.showCountry = data});
+    // console.log(this.currentCountry);
+
     // this.countrieManager.getAll(""+ this.country$);
   //
     this.cols = [
@@ -171,6 +182,7 @@ export class countrieComponent implements OnInit {
   //     width: '30vw'
   //   });
   // }
+
 
   view(rowData: countrieModel) {
     console.log('View ' + rowData.id);

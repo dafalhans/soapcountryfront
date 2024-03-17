@@ -42,6 +42,20 @@
 <!--        <td *ngFor="let col of columns">-->
 <!--          {{ col.type === CellType.DATE ? (rowData[col.field]|date:'dd/MM/yyyy HH:mm:ss') : rowData[col.field] }}-->
 <!--        </td>-->
+<!--        <td *ngFor="let col of columns" (mouseenter)="onHover(rowData[col.field], col.type)">-->
+<!--          <ng-container *ngIf="col.type === CellType.DATE">-->
+<!--            {{ rowData[col.field] | date:'dd/MM/yyyy HH:mm:ss' }}-->
+<!--          </ng-container>-->
+<!--          <ng-container *ngIf="col.type === CellType.TEXT">-->
+<!--            {{ rowData[col.field] }}-->
+<!--          </ng-container>-->
+<!--          <ng-container *ngIf="col.type === CellType.COUNTRY">-->
+<!--            <app-countrie [country]="rowData[col.field]"></app-countrie>-->
+<!--&lt;!&ndash;            <app-countrie [country]="'FRA'"></app-countrie>&ndash;&gt;-->
+<!--&lt;!&ndash;            <app-countrie [country]="rowData[col.field]"></app-countrie>&ndash;&gt;-->
+<!--          </ng-container>-->
+
+
         <td *ngFor="let col of columns" (mouseenter)="onHover(rowData[col.field], col.type)">
           <ng-container *ngIf="col.type === CellType.DATE">
             {{ rowData[col.field] | date:'dd/MM/yyyy HH:mm:ss' }}
@@ -50,9 +64,15 @@
             {{ rowData[col.field] }}
           </ng-container>
           <ng-container *ngIf="col.type === CellType.COUNTRY">
+            {{ rowData[col.field] }}
             <app-countrie [country]="rowData[col.field]"></app-countrie>
-<!--            <app-countrie [country]="rowData[col.field]"></app-countrie>-->
+            <!--            <app-countrie [country]="'FRA'"></app-countrie>-->
+            <!--            <app-countrie [country]="rowData[col.field]"></app-countrie>-->
           </ng-container>
+
+
+
+
 <!--          <ng-container *ngIf="col.type === CellType.COUNTRY">-->
 <!--            <app-countrie></app-countrie>-->
 <!--&lt;!&ndash;            <span (click)="showCountryDetails(rowData[col.field])">{{ rowData[col.field] }}</span>&ndash;&gt;-->
